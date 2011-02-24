@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # My awesome spell checker. It checks spelling. And is awesome.
 #
 class SpellChecker
