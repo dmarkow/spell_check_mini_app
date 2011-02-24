@@ -9,7 +9,7 @@ class SpellChecker
   # into an array. Regular expression searches against a string are MUCH faster
   # than iterating through each record using something like Array#detect
   #
-  def initialize(word_list_path="/usr/share/dict/words")
+  def initialize(word_list_path=Rails.root.join("lib","words").to_s)
     @word_list = File.read(word_list_path)# .split("\n")
   end
 

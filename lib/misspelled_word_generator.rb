@@ -1,5 +1,5 @@
 class MisspelledWordGenerator
-  def initialize(word_list_path="/usr/share/dict/words")
+  def initialize(word_list_path=Rails.root.join("lib","words").to_s)
     @words = File.read(word_list_path).split("\n")
   end
 
