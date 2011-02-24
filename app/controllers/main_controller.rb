@@ -3,7 +3,7 @@ class MainController < ApplicationController
   end
 
   def check_spelling
-    result = @@spell_checker.check(params[:word])
+    @result = @@spell_checker.check(params[:word])
   end
 
   def test_misspelled_words
