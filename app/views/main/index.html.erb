@@ -1,0 +1,30 @@
+<div id="spell_checker" class="container">
+  <h1>Super Awesome Spell Checker</h1>
+  <%= form_tag("/check_spelling", :remote => true) do %>
+    <%= text_field_tag "word" %>
+    <%= submit_tag "Check It!", :id => "submit_button" %>
+  <% end %>
+  <div id="result">&nbsp;</div>
+</div>
+
+<div id="misspelled_words" class="container">
+  <h1>Misspelled Word Generator</h1>
+  <%= button_to "Misspelled Words", "/test_misspelled_words", :id => "misspelled_button", :remote => true %>
+  <div id="random_words"></div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#submit_button").click(function(event){
+      if ($("#word").val() == "") {
+        $("#result").html("<span class='error'>No Word Entered!</span>");
+        event.preventDefault();
+      } else {
+        $("#result").html("<em>Checking...</em>");
+      }
+    });
+    $("#misspelled_button").click(function(){
+      $("#random_words").html("<em>Loading...</em>");
+    });
+  });
+</script>

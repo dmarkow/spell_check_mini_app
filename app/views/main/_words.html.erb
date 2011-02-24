@@ -1,0 +1,15 @@
+<div class="word_set">
+  <div class="word_entry heading">Original</div>
+  <div class="word_entry heading">Misspelled</div>
+  <div class="word_entry heading">Corrected</div>
+  <div style="clear: both;"></div>
+</div>
+
+<% @words.each do |word_set| %>
+  <div class="word_set">
+    <div class="word_entry"><%= word_set[:original] %></div>
+    <div class="word_entry"><%= word_set[:misspelled] %></div>
+    <div class="word_entry"><%= word_set[:corrected] %></div>
+    <div style="clear: both;"></div>
+  </div>
+<% end %>

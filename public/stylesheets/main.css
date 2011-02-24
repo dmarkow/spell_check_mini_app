@@ -1,0 +1,41 @@
+body {
+  background: #141519;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+div.container {
+  border: 5px solid #5E5861;
+  background: #96968C;
+  background: #E4E8C3;
+  width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+div#result {
+  margin: 20px 0px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+span.error {
+  color: darkred;
+}
+
+div.word_entry {
+  float: left; width: 150px; padding: 3px 0px; margin: 0px 5px; overflow: hidden;
+}
+
+div.word_set {
+  width: 480px;
+  margin: 0 auto;
+}
+
+div.heading {
+  font-weight: bold;
+}
+
+div#random_words {
+  margin-top: 10px;
+}
