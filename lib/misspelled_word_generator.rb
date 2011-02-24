@@ -29,7 +29,7 @@ class MisspelledWordGenerator
   end
 
   def add_letters(word)
-    rand(5).times do
+    rand(3).times do
       position_to_duplicate = rand(word.length)
       word.insert(position_to_duplicate, word[position_to_duplicate])
     end
@@ -37,11 +37,10 @@ class MisspelledWordGenerator
   end
 
   def change_case(word)
-    rand(5).times do
+    rand(3).times do
       position_to_uppercase = rand(word.length)
       word[position_to_uppercase] = word[position_to_uppercase].upcase
     end
     word
   end
 end
-
