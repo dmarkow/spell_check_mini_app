@@ -3,6 +3,10 @@
 # My awesome misspelled word generator. It sucks at spelling, which is kind of the point.
 #
 class MisspelledWordGenerator
+
+  # Sets up a new MisspelledWordGenerator instance using the specified word list. The
+  # default is /usr/share/dict/words, which is used on Mac OS X machines.
+  #
   def initialize(word_list_path=Rails.root.join("lib","words").to_s)
     @words = File.read(word_list_path).split("\n")
   end
@@ -21,6 +25,7 @@ class MisspelledWordGenerator
 
   private
 
+  # Replace all vowels with a random vowel
   def change_vowels(word)
     word.scan(/[aeiou]/) do
       word[Regexp.last_match.offset(0).first] = %w(a e i o u)[rand(5)]
@@ -28,6 +33,7 @@ class MisspelledWordGenerator
     word
   end
 
+  # Add up to three duplicate letters
   def add_letters(word)
     rand(3).times do
       position_to_duplicate = rand(word.length)
@@ -36,6 +42,7 @@ class MisspelledWordGenerator
     word
   end
 
+  # Convert up to three letters to uppercase
   def change_case(word)
     rand(3).times do
       position_to_uppercase = rand(word.length)
